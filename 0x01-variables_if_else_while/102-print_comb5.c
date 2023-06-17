@@ -1,36 +1,32 @@
 #include <stdio.h>
 /**
- * print_combinations - Prints all possible combinations of two digits
+ * main - Entry point of the program
+ *
+ * Return: Always 0 (Success)
  */
-void print_combinations(void)
+int main(void)
 {
-int num1, num2;
+int i, j;
 
-for (num1 = 0; num1 < 100; num1++)
+for (i = 0; i < 100; i++)
 {
-for (num2 = num1; num2 < 100; num2++)
+for (j = i; j < 100; j++)
 {
-putchar('0' + num1 / 10);
-putchar('0' + num1 % 10);
+putchar((i / 10) + '0');
+putchar((i % 10) + '0');
 putchar(' ');
-putchar('0' + num2 / 10);
-putchar('0' + num2 % 10);
+putchar((j / 10) + '0');
+putchar((j % 10) + '0');
 
-if (num1 != 99 || num2 != 99)
+if (i != 99 || j != 99)
 {
 putchar(',');
 putchar(' ');
 }
 }
 }
-}
-/**
- * main - Entry point of the program
- *
- * Return: Exit status of the program
- */
-int main(void)
-{
-print_combinations();
+
+putchar('\n');
+
 return (0);
 }
