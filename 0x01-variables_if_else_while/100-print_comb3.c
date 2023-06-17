@@ -1,34 +1,32 @@
 #include <stdio.h>
 /**
- * main - Entry point of the program
- *
- * Return: Exit status of the program
+ * print_combinations - Prints all possible combinations of two digits
  */
-int main(void)
+void print_combinations(void)
 {
-int tens, ones;
+int digit1, digit2;
 
-for (tens = 0; tens < 10; tens++)
+for (digit1 = 0; digit1 < 10; digit1++)
 {
-for (ones = 0; ones < 10; ones++)
+for (digit2 = digit1 + 1; digit2 < 10; digit2++)
 {
-if (tens == 1 && ones == 0)
-{
-continue;
-}
-
-putchar(tens + '0');
-putchar(ones + '0');
-
-if (tens != 9 || ones != 9)
+putchar('0' + digit1);
+putchar('0' + digit2);
+if (digit1 != 8 || digit2 != 9)
 {
 putchar(',');
 putchar(' ');
 }
 }
 }
-
-putchar('\n');
-
+}
+/**
+ * main - Entry point of the program
+ *
+ * Return: Exit status of the program
+ */
+int main(void)
+{
+print_combinations();
 return (0);
 }
