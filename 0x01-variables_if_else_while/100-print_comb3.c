@@ -35,5 +35,6 @@ putchar(' ');
 int main(void)
 {
 print_combinations();
+putchar('\n');
 return (0);
 }
