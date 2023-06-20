@@ -8,7 +8,7 @@
  * Return: On success, returns the character value of the argument.
  * On error, returns -1 and errno is set appropriately.
  */
-int _putchar(char n)
+char _putchar(char n)
 {
 	/**
 	 * write - Writes to a file descriptor
