@@ -8,7 +8,7 @@ int main(void)
 {
 char _putchar(char n);
 char char_arr[] = "_putchar";
-int size = sizeof(char_arr) / sizeof(char_arr[0]);
+int size = sizeof(char_arr) / sizeof(char_arr[0]) - 1;
 int i;
 
 for (i = 0; i < size; i++)
