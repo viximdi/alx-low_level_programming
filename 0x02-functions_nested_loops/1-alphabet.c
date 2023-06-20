@@ -1,4 +1,4 @@
-#include "main.c"
+#include "main.h"
 /**
  * print_alphabet - prints the alphabet, in lowercase
  *
@@ -15,14 +15,4 @@ _putchar(letter);
 }
 _putchar('\n');
 return;
-}
-/**
- * main - check the code
- *
- * Return: Always 0.
- */
-int main(void)
-{
-print_alphabet();
-return (0);
 }
