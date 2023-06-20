@@ -1,11 +1,11 @@
+#include "main.h"
 /**
- * main - check the code.
+ *print_alphabet - prints  10 times the alphabet, in lowercase.
  *
- * Return: Always 0.
+ * Return: void.
  */
 void print_alphabet_x10(void)
 {
-char _putchar(char n);
 char letter = 'a';
 int i;
 
@@ -17,15 +17,4 @@ _putchar(letter);
 }
 }
 _putchar('\n');
-return;
-}
-/**
- * main - check the code.
- *
- * Return: Always 0.
- */
-int main(void)
-{
-print_alphabet_x10();
-return (0);
 }
