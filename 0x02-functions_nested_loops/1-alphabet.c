@@ -6,7 +6,6 @@
  */
 void print_alphabet(void)
 {
-char _putchar(char n);
 char letter;
 
 for (letter = 'a'; letter <= 'z'; letter++)
