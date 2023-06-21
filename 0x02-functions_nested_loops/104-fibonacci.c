@@ -1,40 +1,73 @@
 #include <stdio.h>
 
-/**
- * print_fibonacci - Prints the first n Fibonacci numbers
- * @n: The number of Fibonacci numbers to be printed
- */
+void add(unsigned int num1[], unsigned int num2[], unsigned int result[]);
+void print_array(unsigned int num[]);
+void copy_array(unsigned int source[], unsigned int destination[]);
+
 void print_fibonacci(int n)
 {
-	unsigned long long first = 1;
-	unsigned long long second = 2;
+	unsigned int a[500] = {0};
+	unsigned int b[500] = {0};
+	unsigned int result[500] = {0};
+
+	a[499] = 1;
+	b[499] = 2;
+
+	printf("%d, %d", a[499], b[499]);
+
 	int count = 2;
+	while (count < n) {
+		add(a, b, result);
+		print_array(result);
 
-	printf("%llu, %llu", first, second);
+		copy_array(b, a);
+		copy_array(result, b);
 
-	while (count < n)
-	{
-		unsigned long long next = first + second;
-
-		printf(", %llu", next);
-
-		first = second;
-		second = next;
 		count++;
 	}
 
 	printf("\n");
 }
 
-/**
- * main - Entry point of the program
- *
- * Return: 0 (Success)
- */
+void add(unsigned int num1[], unsigned int num2[], unsigned int result[])
+{
+	int carry = 0;
+	for (int i = 499; i >= 0; i--) {
+		int sum = num1[i] + num2[i] + carry;
+		result[i] = sum % 10;
+		carry = sum / 10;
+	}
+}
+
+void copy_array(unsigned int source[], unsigned int destination[])
+{
+	for (int i = 0; i < 500; i++) {
+		destination[i] = source[i];
+	}
+}
+
+void print_array(unsigned int num[])
+{
+	int start = 0;
+	while (start < 500 && num[start] == 0) {
+		start++;
+	}
+
+	for (int i = start; i < 500; i++) {
+		printf("%d", num[i]);
+	}
+
+	if (start == 500) {
+		printf("0");
+	}
+
+	printf(", ");
+}
+
 int main(void)
 {
 	print_fibonacci(98);
 
-	return (0);
+	return 0;
 }
 
