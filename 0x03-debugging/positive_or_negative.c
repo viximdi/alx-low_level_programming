@@ -2,9 +2,10 @@
 #include <time.h>
 #include <stdio.h>
 /**
- * positive_or_negative - check is no. is 0, - , +.
+ * positive_or_negative - check if a number is zero, positive, or negative.
+ * @i: The number to be checked.
  *
- * Return: void
+ * Return: i
  */
 int positive_or_negative(int i)
 {
