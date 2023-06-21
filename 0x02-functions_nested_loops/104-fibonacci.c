@@ -16,7 +16,9 @@ void print_fibonacci()
 	unsigned int b[500] = {0};
 	unsigned int result[500] = {0};
 	unsigned int carry = 0;
+	unsigned int sum;
 	int count = 2;
+	int i;
 
 	a[499] = 1;
 	b[499] = 2;
@@ -26,15 +28,18 @@ void print_fibonacci()
 	while (count < 98)
 	{
 		carry = 0;
-		int i;
+
 		for (i = 499; i >= 0; i--)
 		{
-			unsigned int sum = a[i] + b[i] + carry;
+			sum = a[i] + b[i] + carry;
 			result[i] = sum % 1000000000;
 			carry = sum / 1000000000;
 		}
+
 		printf(", ");
+
 		int start = 0;
+
 		for (i = 0; i < 500; i++)
 		{
 			if (result[i] != 0)
@@ -43,6 +48,7 @@ void print_fibonacci()
 				break;
 			}
 		}
+
 		for (i = start; i < 500; i++)
 		{
 			if (i == start)
@@ -54,16 +60,19 @@ void print_fibonacci()
 				printf("%09u", result[i]);
 			}
 		}
+
 		count++;
 		copy_array(b, a);
 		copy_array(result, b);
 	}
+
 	printf("\n");
 }
 
 void copy_array(unsigned int source[], unsigned int destination[])
 {
 	int i;
+
 	for (i = 0; i < 500; i++)
 	{
 		destination[i] = source[i];
