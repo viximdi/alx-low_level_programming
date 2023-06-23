@@ -1,81 +1,49 @@
 #include <stdio.h>
 
-void copy_array(unsigned int source[], unsigned int destination[]);
-void print_fibonacci();
-
-int main()
+void print_fibonacci(void)
 {
-	print_fibonacci();
-
-	return 0;
-}
-
-void print_fibonacci()
-{
-	unsigned int a[500] = {0};
-	unsigned int b[500] = {0};
-	unsigned int result[500] = {0};
-	unsigned int carry = 0;
-	unsigned int sum;
-	int count = 2;
+	unsigned int a[500];
+	unsigned int b[500];
+	unsigned int result[500];
 	int i;
 
-	a[499] = 1;
-	b[499] = 2;
+	a[0] = 1;
+	b[0] = 2;
+	printf("%u, %u, ", a[0], b[0]);
 
-	printf("%u, %u", a[499], b[499]);
-
-	while (count < 98)
+	for (i = 2; i < 98; i++)
 	{
-		carry = 0;
+		int j;
+		int carry = 0;
 
-		for (i = 499; i >= 0; i--)
+		for (j = 0; j < 500; j++)
 		{
-			sum = a[i] + b[i] + carry;
-			result[i] = sum % 1000000000;
-			carry = sum / 1000000000;
+			int sum = a[j] + b[j] + carry;
+			result[j] = sum % 10000000000;
+			carry = sum / 10000000000;
 		}
 
-		printf(", ");
+		printf("%u", result[499]);
 
-		int start = 0;
+		for (j = 498; j >= 0; j--)
+			printf("%.10u", result[j]);
 
-		for (i = 0; i < 500; i++)
+		if (i != 97)
+			printf(", ");
+
+		for (j = 0; j < 500; j++)
 		{
-			if (result[i] != 0)
-			{
-				start = i;
-				break;
-			}
+			a[j] = b[j];
+			b[j] = result[j];
 		}
-
-		for (i = start; i < 500; i++)
-		{
-			if (i == start)
-			{
-				printf("%u", result[i]);
-			}
-			else
-			{
-				printf("%09u", result[i]);
-			}
-		}
-
-		count++;
-		copy_array(b, a);
-		copy_array(result, b);
 	}
 
 	printf("\n");
 }
 
-void copy_array(unsigned int source[], unsigned int destination[])
+int main(void)
 {
-	int i;
-
-	for (i = 0; i < 500; i++)
-	{
-		destination[i] = source[i];
-	}
+	print_fibonacci();
+	return 0;
 }
 
