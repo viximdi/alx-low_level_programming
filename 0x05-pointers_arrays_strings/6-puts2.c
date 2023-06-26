@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stddef.h>
 /**
  * puts2 -  prints every other character of a string
  * @str: pointer for string varible
@@ -9,8 +8,6 @@ void puts2(char *str)
 {
 	int n;
 
-	if (str == NULL)
-		return;
 
 	for (n = 0; str[n] != '\0';)
 	{
