@@ -13,9 +13,8 @@ void print_rev(char *s)
 		length++;
 	}
 
-	int x;
 
-	for (x = length - 1; x >= 0; x--)
+	for (int x = length - 1; x >= 0; x--)
 	{
 		_putchar(s[x]);
 	}
