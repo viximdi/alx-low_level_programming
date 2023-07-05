@@ -1,5 +1,6 @@
 /**
- * _sqrt_recursion_helper - Helper function to calculate the square root recursively
+ * _sqrt_recursion_helper - Helper function to calculate the square root
+ *                          recursively
  * @n: The number to calculate the square root of
  * @guess: The current number to check if it is the square root
  *
