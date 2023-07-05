@@ -1,6 +1,7 @@
 /**
  * factorial - calculates the  factorial of a given number
  * @n: number to be calc.
+ * Return: factorial of n, or -1 if n is negative
  */
 int factorial(int n)
 {
