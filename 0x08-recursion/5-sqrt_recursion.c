@@ -1,29 +1,18 @@
 /**
- * _sqrt_recursion_helper - Helper function to calculate the square root
- *                          recursively
+ * _sqrt_recursion_helper - Helper function to calculate the square root recursively
  * @n: The number to calculate the square root of
- * @start: The starting point of the search range
- * @end: The ending point of the search range
+ * @guess: The current number to check if it is the square root
  *
  * Return: The square root of the number if found, otherwise -1
  */
-int _sqrt_recursion_helper(int n, int start, int end)
+int _sqrt_recursion_helper(int n, int guess)
 {
-	int mid;
-	int square;
-
-	if (start > end)
+	if (guess * guess == n)
+		return (guess);
+	else if (guess * guess > n)
 		return (-1);
-
-	 mid = start + (end - start) / 2;
-	 square = mid * mid;
-
-	if (square == n)
-		return (mid);
-	else if (square > n)
-		return (_sqrt_recursion_helper(n, start, mid - 1));
 	else
-		return (_sqrt_recursion_helper(n, mid + 1, end));
+		return (_sqrt_recursion_helper(n, guess + 1));
 }
 
 /**
@@ -37,5 +26,6 @@ int _sqrt_recursion(int n)
 	if (n < 0)
 		return (-1);
 
-	return (_sqrt_recursion_helper(n, 0, n));
+	return (_sqrt_recursion_helper(n, 0));
 }
+
