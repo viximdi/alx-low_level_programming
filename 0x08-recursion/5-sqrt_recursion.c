@@ -9,11 +9,14 @@
  */
 int _sqrt_recursion_helper(int n, int start, int end)
 {
+	int mid;
+	int square;
+
 	if (start > end)
 		return (-1);
 
-	int mid = start + (end - start) / 2;
-	int square = mid * mid;
+	 mid = start + (end - start) / 2;
+	 square = mid * mid;
 
 	if (square == n)
 		return (mid);
