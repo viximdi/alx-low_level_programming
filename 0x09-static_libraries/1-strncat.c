@@ -1,56 +1,31 @@
 #include "main.h"
-
 /**
- * infinite_add - Adds two numbers
- * @n1: First number
- * @n2: Second number
- * @r: Buffer for the result
- * @size_r: Size of the buffer
- *
- * Description: This function adds two numbers and stores the result in the
- * provided buffer 'r'. It can handle numbers of any length.
- *
- * Return: Address of 'r' or 0 if the result doesn't fit in 'r'
+ * _strncat - concatenates two strings.
+ * @dest: resultant string
+ * @src: string to be appended
+ * @n: conditon to check
+ * Return: pointer to the resulting string (dest)
  */
-char *infinite_add(char *n1, char *n2, char *r, int size_r)
+char *_strncat(char *dest, char *src, int n)
 {
-	int i, j, k, l, m, n;
+	char *dest_copy = dest;
+	int len = 0;
+	int i;
 
-	for (i = 0; n1[i]; i++)
-		;
-	for (j = 0; n2[j]; j++)
-		;
-
-	if (i > size_r || j > size_r)
-		return (0);
-
-	m = 0;
-	for (i -= 1, j -= 1, k = 0; k < size_r - 1; i--, j--, k++)
+	while (*dest != '\0')
 	{
-		n = m;
-		if (i >= 0)
-			n += n1[i] - '0';
-		if (j >= 0)
-			n += n2[j] - '0';
-
-		if (i < 0 && j < 0 && n == 0)
-			break;
-
-		m = n / 10;
-		r[k] = n % 10 + '0';
+		dest++;
+		len++;
 	}
 
-	r[k] = '\0';
-
-	if (i >= 0 || j >= 0 || m)
-		return (0);
-
-	for (k -= 1, l = 0; l < k; k--, l++)
+	for (i = 0; (i < n && *src != '\0'); i++)
 	{
-		m = r[k];
-		r[k] = r[l];
-		r[l] = m;
+		*dest = *src;
+		dest++;
+		src++;
+		len++;
 	}
 
-	return (r);
+	*dest = '\0';
+	return (dest_copy);
 }
