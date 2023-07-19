@@ -1,1 +1,1 @@
-a function that prints a name.
+0x0F. C - Function pointers
