@@ -2,38 +2,37 @@
 
 /**
  * print_all - Prints arguments based on specified format.
- * @format: The format specifying the necessary operations for each argument.
+ * @format: The format specifying the necessary operations
+ * for each argument.
  * Return: void
  */
-
 void print_all(const char * const format, ...)
 {
 	int i;
 	int flag;
 	char *str;
-	va_list args_list;
+	va_list a_list;
 
-	va_start(args_list, format);
+	va_start(a_list, format);
 	i = 0;
-
 	while (format != NULL && format[i] != '\0')
 	{
 		switch (format[i])
 		{
 			case 'c':
-				printf("%c", va_arg(args_list, int));
+				printf("%c", va_arg(a_list, int));
 				flag = 0;
 				break;
 			case 'i':
-				printf("%i", va_arg(args_list, int));
+				printf("%i", va_arg(a_list, int));
 				flag = 0;
 				break;
 			case 'f':
-				printf("%f", va_arg(args_list, double));
+				printf("%f", va_arg(a_list, double));
 				flag = 0;
 				break;
 			case 's':
-				str = va_arg(args_list, char*);
+				str = va_arg(a_list, char*);
 				if (str == NULL)
 					str = "(nil)";
 				printf("%s", str);
@@ -48,5 +47,5 @@ void print_all(const char * const format, ...)
 		i++;
 	}
 	printf("\n");
-	va_end(args_list);
+	va_end(a_list);
 }
