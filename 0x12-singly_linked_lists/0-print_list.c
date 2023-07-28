@@ -4,13 +4,13 @@
 #include "lists.h"
 
 /**
- *  * print_list - check the code for Holberton School students.
- *   * @h: name of the list
- *    * Return: the number of nodes.
- *     */
+ * print_list - Prints all the elements of a linked list.
+ * @h: Pointer to the head of the list.
+ * Return: The number of nodes in the list.
+ */
 size_t print_list(const list_t *h)
 {
-	int count = 0;
+	int n = 0;
 
 	while (h)
 	{
@@ -22,8 +22,8 @@ size_t print_list(const list_t *h)
 		{
 			printf("[%d] %s\n", h->len, h->str);
 		}
-		count++;
+		n++;
 		h = h->next;
 	}
-	return (count);
+	return (n);
 }
