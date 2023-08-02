@@ -25,6 +25,8 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index);
 int sum_listint(listint_t *head);
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n);
 int delete_nodeint_at_index(listint_t **head, unsigned int index);
+listint_t **reallocate_array(listint_t **old_array, size_t old_size, listint_t *new_element);
+const listint_t **reallocate_list(const listint_t **old_list, size_t size, const listint_t *new_node)
 listint_t *reverse_listint(listint_t **head);
 size_t free_listint_safe(listint_t **h);
 listint_t *find_listint_loop(listint_t *head);
