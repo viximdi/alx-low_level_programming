@@ -10,7 +10,8 @@
  *
  * Return: pointer to the new array
  */
-listint_t **reallocate_array(listint_t **old_array, size_t old_size, listint_t *new_element)
+listint_t **reallocate_array(listint_t **old_array,
+		size_t old_size, listint_t *new_element)
 {
 	listint_t **new_array;
 	size_t i;

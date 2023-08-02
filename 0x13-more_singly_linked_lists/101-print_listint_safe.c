@@ -11,7 +11,8 @@
  *
  * Return: pointer to the new list
  */
-const listint_t **reallocate_list(const listint_t **old_list, size_t size, const listint_t *new_node)
+	const listint_t **reallocate_list
+(const listint_t **old_list, size_t size, const listint_t *new_node)
 {
 	const listint_t **new_list;
 	size_t i;
