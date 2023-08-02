@@ -39,6 +39,7 @@ listint_t **reallocate_array(listint_t **old_array, size_t old_size, listint_t *
 size_t free_listint_safe(listint_t **head)
 {
 	size_t num = 0;
+	size_t i;
 	listint_t **node_array = NULL;
 	listint_t *next_node;
 
@@ -47,7 +48,7 @@ size_t free_listint_safe(listint_t **head)
 
 	while (*head != NULL)
 	{
-		for (size_t i = 0; i < num; i++)
+		for (i = 0; i < num; i++)
 		{
 			if (*head == node_array[i])
 			{
