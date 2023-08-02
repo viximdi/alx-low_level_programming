@@ -3,16 +3,16 @@
 #include <stdio.h>
 
 /**
- * reallocate_list - reallocates memory for an array of pointers
- * to the nodes in a linked list
+ * reallocate_list - reallocates memory for an array of pointers to the nodes
+ *                   in a linked list
  * @old_list: the old list to append
  * @size: size of the new list (always one more than the old list)
  * @new_node: new node to add to the list
  *
  * Return: pointer to the new list
  */
-	const listint_t **reallocate_list
-(const listint_t **old_list, size_t size, const listint_t *new_node)
+const listint_t **reallocate_list(const listint_t **old_list, size_t size,
+		const listint_t *new_node)
 {
 	const listint_t **new_list;
 	size_t i;
