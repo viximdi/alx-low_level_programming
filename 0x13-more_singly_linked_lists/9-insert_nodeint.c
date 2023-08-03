@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * insert_nodeint_at_index - Inserts a new node 
+ * insert_nodeint_at_index - Inserts a new node
  * at a given position in the list.
  * @head: Double pointer to the head of the list.
  * @idx: Index of the node to be inserted.
