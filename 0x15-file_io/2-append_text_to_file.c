@@ -14,7 +14,8 @@
  *         Return 1 if the file exists and -1 if the file does not exist
  *         or if you do not have the required permissions to write the file.
  */
-int append_text_to_file(const char *filename, char *text_content) {
+int append_text_to_file(const char *filename, char *text_content)
+{
 	int fd;
 	ssize_t text_length, bytes_written;
 
@@ -25,7 +26,8 @@ int append_text_to_file(const char *filename, char *text_content) {
 	if (fd == -1)
 		return (-1);
 
-	if (text_content != NULL) {
+	if (text_content != NULL)
+	{
 		text_length = strlen(text_content);
 		bytes_written = write(fd, text_content, text_length);
 		close(fd);
